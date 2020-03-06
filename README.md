@@ -38,7 +38,7 @@ The easiest way to get the full path to the subtitle file is to find it in your 
 
 ## Authors
 
-* **Marko Filipović** - *Initial work* - [MarkoMFilil](https://github.com/MarkoMFilip)
+* **Marko Filipović** - *Initial work* - [MarkoMFilip](https://github.com/MarkoMFilip)
 
 
 ## License
