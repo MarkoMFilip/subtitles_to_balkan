@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# sysinfo_page - A script to convert Serbian/Croatian/Bosnian subtitles to utf-8
+# encoding, while substituting non-utf-8 characters for the correct ones.
+
+
+#### Inputs and constants
+subs_path=$1
+regexp=": (.*) with confidence"
+
+
+
+#### Main
+
+# Run encoding detection script first
+chardet_output=$(chardet $subs_path)
+if [[ $chardet_output =~ $regexp ]]; then
+    encoding="${BASH_REMATCH[1]}"
+else
+    echo "Can't detect encoding!"
+    exit 0
+fi
+
+# Convert the subtitles
+$HOME/bin/subs_to_balkan.py $subs_path $encoding
+
